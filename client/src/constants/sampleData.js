@@ -12,7 +12,9 @@ export const SampleChats = [
         _id: "2",
         groupChat: true,
         members: ["1", "2"]
-    }
+    },
+     
+    
 ]
 
 export const sampleUsers = [

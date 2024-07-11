@@ -13,6 +13,7 @@ import UserItem from '../shared/UserItem'
 
 const NewGroups = () => {
   const groupName = useInputValidation("")
+  
   const [members, setMembers] = useState(sampleUsers)
   const [selectedMembers, SetSelectedMembers] = useState([])
 
