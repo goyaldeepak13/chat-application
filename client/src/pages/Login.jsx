@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Avatar, Button, Container, IconButton, Paper, Stack, TextField, Typography } from "@mui/material"
 import { CameraAlt as CameraAltIcon } from "@mui/icons-material"
+import {useFileHandler, useInputValidation} from '6pp'
+
 
 import { VisuallyHiddenInput } from '../components/styles/StyledComponent'
-import {useFileHandler, useInputValidation} from '6pp'
 import { usernameValidator } from '../utils/validators' 
 import { gradientBg } from '../constants/color'
 
