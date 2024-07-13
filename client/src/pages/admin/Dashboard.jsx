@@ -68,18 +68,27 @@ const widgets = (
      <Container component={"main"}>
 {AppBar}
 <Stack
-direction={"row"}
-spacing = {"2rem"}
+direction={{
+  xs: "column",
+  lg: "row"
+}}
+sx = {{gap: "2rem"}}
 flexWrap={"wrap"}
+justifyContent = {"center"}
+alignItems={{
+xs: "center",
+lg: "stretch",
+
+}}
 >
 <Paper
 elevation={3}
 sx={{
-  padding: "2rem 3.5rem",
+  padding: "0rem 1.5rem",
   borderRadius: "1rem",
   width: "100%",
-  maxWidth: "45rem",
-  height: "25rem"
+  maxWidth: "33rem",
+  // height: "25rem"
 
 }}
 >
@@ -87,7 +96,7 @@ sx={{
 Last messages
 </Typography>
 
-<LineChart/>
+<LineChart value={[23,12,43,54]}/>
 
 </Paper>
   <Paper
@@ -101,17 +110,21 @@ Last messages
     width: {xs:"100%", sm:"50%"},
   position: "relative",
   width: "100%",
-  maxWidth: "25rem%",
-  height: "25rem"
+  maxWidth: "25rem",
+  // height: "25rem"
   }}
   >
-<DoughnutChart/>
+<DoughnutChart
+ labels={["single chats", "Group chats"]}
+  value={[23, 76]}
+
+/>
 
 <Stack
 position={"absolute"}
 direction={"row"}
 justifyContent={"center"}
-alignContent={"center"}
+alignItems={"center"}
 spacing={"0.5rem"}
 width={"100%"}
 height={"100%"}

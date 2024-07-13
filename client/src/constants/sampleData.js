@@ -13,8 +13,8 @@ export const SampleChats = [
         groupChat: true,
         members: ["1", "2"]
     },
-     
-    
+
+
 ]
 
 export const sampleUsers = [
@@ -59,12 +59,12 @@ export const sampleNotifications = [
 export const sampleMessage = [
     {
         attachments: [
-            
+
         ],
         content: "BJP hatao Desh bachao",
         _id: "dfgjhkhj",
         sender: {
-            _id:"user._id",
+            _id: "user._id",
             name: "deepak"
         },
         chat: "chatId",
@@ -78,13 +78,73 @@ export const sampleMessage = [
                 url: "https://www.w3schools.com/howto/img_avatar.png"
             },
         ],
-        content:  "",
+        content: "",
         _id: "dfghjkjjhj",
         sender: {
-            _id:"sdfghjk",
+            _id: "sdfghjk",
             name: "deepak2"
         },
         chat: "chatId",
         createdAt: "2024-07-09T11:22:57.225Z"
     }
 ]
+
+ 
+
+export const dashboardData = {
+    users: [
+      {
+        name: "deepansh",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        _id: "1",
+        username: "deepakgoyal13",
+        friends: 20,
+        groups: 5,
+      },
+      {
+        name: "dhruvDon",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        _id: "2",
+        username: "dhruvDon11",
+        friends: 20,
+        groups: 5,
+      },
+    ],
+
+    chats: [
+        {
+            name: "Goyal family",
+            avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+            _id: "1",
+            groupChat: false,
+            members:[{_id: "1", avatar:"https://www.w3schools.com/howto/img_avatar.png"}, {_id: "2", avatar:"https://www.w3schools.com/howto/img_avatar.png"},],
+            totalMembers: 2,
+            totalMessages: 20,
+            creator:{
+                name: "deepak",
+                avatar: "https://www.w3schools.com/howto/img_avatar.png",
+            },
+             
+          },
+
+          {
+            name: "buisness",
+            avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+            _id: "2",
+            groupChat: false,
+            members:[{_id: "1", avatar:"https://www.w3schools.com/howto/img_avatar.png"}, {_id: "2", avatar:"https://www.w3schools.com/howto/img_avatar.png"},],
+            totalMembers: 2,
+            totalMessages: 20,
+            creator:{
+                name: "shikhar",
+                avatar: "https://www.w3schools.com/howto/img_avatar.png",
+            },
+             
+          },
+
+    ]
+  };
+  
+
+
+  

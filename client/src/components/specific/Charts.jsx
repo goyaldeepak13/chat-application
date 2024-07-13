@@ -14,7 +14,8 @@ import {Chart as Chartjs,
 } from "chart.js"
  
  
-import {purple, lightpurple } from '../../constants/color';
+import {purple, lightpurple, orange, lightOrange } from '../../constants/color';
+import { getLast7days } from '../../lib/features';
 
 Chartjs.register(
     Tooltip,
@@ -26,6 +27,7 @@ Chartjs.register(
     ArcElement,
     Legend,
 );
+const labels = getLast7days()
 
 const lineChartOptions = {
     responsive: true,
@@ -54,12 +56,12 @@ const lineChartOptions = {
         }
     
 }
-const LineChart = () => {
+const LineChart = ({value = []}) => {
     const data = {
-        labels: ["January", "February", "March", "April", "May", "June"],
+        labels,
         datasets: [
             {
-                data:[1,2,34,6],
+                data:value,
                 label: "Revenue",
                 fill: true,
                 backgroundColor: lightpurple,
@@ -73,8 +75,38 @@ const LineChart = () => {
      <Line data={data} options={lineChartOptions} />
   )
 }
-const DoughnutChart = () => {
-    return <div>chart</div>
+const doughnutChartOptions = {
+    responsive: true,
+    plugins:{
+        legend:{
+            display: true,
+        },
+         
+    },
+    cutout: 120, // more value of cutout more  dougnut chart will be more thin
+}
+
+const DoughnutChart = ({value = [],labels = []}) => {
+    const data = {
+        labels,
+        datasets: [
+            {
+                data:value,
+                // label: "Total Chats vs Groups Chats", 
+                backgroundColor: [lightpurple, lightOrange],
+                hoverBackgroundColor: [purple, orange],
+                borderColor:   [purple, orange],
+                offset: 20,
+             
+            },
+            
+        ],
+    };
+    // console.log(data.labels)
+   return <Doughnut 
+   style={{zIndex: 1}}
+   data={data}
+    options={doughnutChartOptions}/>
   }
 
 export {LineChart, DoughnutChart}
